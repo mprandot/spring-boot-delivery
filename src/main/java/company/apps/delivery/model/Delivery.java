@@ -6,10 +6,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 @Entity
+
 @Table(name = "delivery")
 public class Delivery {
-
+	
+	
+	public Delivery(String name) {
+		this.name = name;
+	}
+	
+	public Delivery() {}
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -30,6 +40,5 @@ public class Delivery {
 	public String getName() {
 		return this.name;
 	}
-	
-	
+
 }
